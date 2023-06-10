@@ -1,8 +1,11 @@
 import '@styles/globals.css';
 
+import Nav from '@components/Nav';
+import Provider from '@components/Provider';
+
 export const metadata = {
-  title: 'Prompt Nexus',
-  description: 'Introducing Prompt Nexus, a groundbreaking web application that unites creative minds and AI enthusiasts in a vibrant community centered around text prompts for large language models like ChatGPT-4. Collaborate, innovate, and interact with advanced AI-powered language models, while expanding your creative horizons and pushing the boundaries of linguistic possibilities. Prompt Nexus - where inspiration meets AI.',
+  title: 'Prompt Nexus - where inspiration meets AI.',
+  description: "Prompt Nexus: An open-source AI tool designed for today's world to discover, create, and share unique creative prompts.",
   keywords: 'AI, Language Models, ChatGPT-4, Prompts, Collaboration, Innovation, Text, Community, Artificial Intelligence, Interaction',
 }
 
@@ -14,6 +17,7 @@ const RootLayout = ({children}) => {
           <div className='gradient' />
         </div>
         <main className='app'>
+          <Nav />
           {children}
         </main>
       </body>
