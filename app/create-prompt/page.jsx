@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 
 import Form from "@components/Form";
 
-const CreatePrompt = () => {
+const CreatePromptPage = () => {
   const router = useRouter();
   const { data: session } = useSession();
   const [submitting, setSubmitting] = useState(false);
@@ -51,4 +51,4 @@ const CreatePrompt = () => {
   )
 }
 
-export default CreatePrompt;
+export default CreatePromptPage;
