@@ -51,10 +51,11 @@ export const PATCH = async (request, { params }) => {
     }
 };
 
-export const DELETE = async ({ params }) => {
+export const DELETE = async (request, { params }) => {
+    console.log("Server : ", params);
     try {
         await connectToDatabase();
-
+        
         await Prompt.findByIdAndRemove(params.id);
 
         return new Response(JSON.stringify("Prompt deleted successfully!"), {
