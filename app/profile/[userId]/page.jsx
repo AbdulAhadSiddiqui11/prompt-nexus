@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 
-import Profile from "@components/profile";
+import Profile from "@components/Profile";
 
 const UserProfilePage = ({ params }) => {
   const [userPosts, setUserPosts] = useState([]);
