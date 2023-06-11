@@ -7,7 +7,7 @@ import { usePathname, useRouter } from 'next/navigation';
 
 const PromptCard = ({ post, handleTagClick, handleEdit, handleDelete }) => {
   const [copied, setCopied] = useState('');
-  const {data : session} = useSession();
+  const { data : session } = useSession();
   const pathName = usePathname();
   const router = useRouter();
 
@@ -17,10 +17,16 @@ const PromptCard = ({ post, handleTagClick, handleEdit, handleDelete }) => {
     setTimeout(() => setCopied(''), 3000);
   };
 
+  const handleProfileClick = () => {
+    if (post.creator._id === session?.user.id) return router.push("/profile");
+
+    router.push(`/profile/${post.creator._id}?username=${post.creator.username}`);
+  };
+
   return (
     <div className='prompt_card'>
       <div className='flex justify-between items-start gap-5'>
-        <div className='flex-1 flex justify-start items-center gap-3 cursor-pointer'>
+        <div className='flex-1 flex justify-start items-center gap-3 cursor-pointer' onClick={handleProfileClick}>
           <Image 
             src={post.creator.image}
             alt='user image'
@@ -39,9 +45,10 @@ const PromptCard = ({ post, handleTagClick, handleEdit, handleDelete }) => {
         </div>
         <div className='copy_btn' onClick={handleCopy}>
           <Image
-            src={copied === post.prompt ? 'assets/icons/tick.svg' : 'assets/icons/copy.svg'}
+            src={copied === post.prompt ? '/assets/icons/tick.svg' : '/assets/icons/copy.svg'}
             width={12}
             height={12}
+            alt={copied === post.prompt ? "tick_icon" : "copy_icon"}
           />
         </div>
       </div>
