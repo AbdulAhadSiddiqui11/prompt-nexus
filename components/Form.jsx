@@ -32,13 +32,28 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
             Tag {` `}
             <span className="font-normal">(#product, #emails, #code, #react, #ideas)</span>
           </span>
-          <input
+          {/* <input
             value={post.tag}
             onChange={(e) => setPost({ ...post, tag: e.target.value })}
             placeholder="tag"
             required
             className="form_input"
+          /> */}
+          <input
+            value={post.tag}
+            onKeyDown={(e) => {
+              const allowedKeys = `a-zA-Z0-9~\`!@\\$%^&\\*\\(\\)\\-_+=\\[{\\]}\\|;:'",<\\.>\\/?`;
+              const regex = new RegExp(`^[${allowedKeys}]+$`);
+              if (!regex.test(e.key)) {
+                e.preventDefault();
+              }
+            }}
+            onChange={(e) => setPost({ ...post, tag: e.target.value })}
+            placeholder="tag"
+            required
+            className="form_input"
           />
+
         </label>
 
         <div className="flex-end mx-3 mb-5 gap-4">
@@ -49,7 +64,7 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
           <button
             type="submit"
             disabled={submitting}
-            className="px-5 py-1.5 text-sm bg-primary-orange rounded-full text-white"
+            className="px-5 py-1.5 text-sm bg-violet-800 rounded-full text-white"
           >
             {submitting ? `${type}...` : type}
           </button>

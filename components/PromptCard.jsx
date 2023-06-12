@@ -49,6 +49,7 @@ const PromptCard = ({ post, handleTagClick, handleEdit, handleDelete }) => {
             width={12}
             height={12}
             alt={copied === post.prompt ? "tick_icon" : "copy_icon"}
+            title={copied === post.prompt ? "Prompt copied" : "Copy prompt"}
           />
         </div>
       </div>
@@ -67,7 +68,7 @@ const PromptCard = ({ post, handleTagClick, handleEdit, handleDelete }) => {
             Edit
           </p>
           <p
-            className='font-inter text-sm orange_gradient cursor-pointer'
+            className='font-inter text-sm red_gradient cursor-pointer'
             onClick={handleDelete}
           >
             Delete
