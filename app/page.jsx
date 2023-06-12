@@ -12,7 +12,8 @@ const HomePage = () => {
             Prompt Nexus: An open-source AI tool designed for today's world to discover, create, and share unique creative prompts.
         </p>
 
-        <Feed />
+          <Feed />
+          
     </section>
   )
 }

@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import PromptCard from './PromptCard';
+import Loading from './Loading';
 
 const PromptCardList = ({ data, handleTagClick }) => {
   return (
@@ -21,7 +22,8 @@ const Feed = () => {
   const [searchText, setSearchText] = useState('');
   const [posts, setPosts] = useState([]);
   const [filteredPosts, setFilteredPosts] = useState([]);
-  
+  const [isLoading, setIsLoading] = useState(true);
+
   const handleSearchChange = (e) => {
     setSearchText(e.target.value);
     filterPosts(e.target.value);
@@ -52,15 +54,19 @@ const Feed = () => {
       const response = await fetch('/api/prompt');
       const data = await response.json();
       data.reverse();
-      
+
+      // await new Promise(resolve => setTimeout(resolve, 5000));
+
       setPosts(data);
       setFilteredPosts(data);
+      setIsLoading(false);
     };
 
     fetchPosts();
   }, []);
   
-
+  if(isLoading) return <Loading />;
+  
   return (
     <section className='feed'>
       <form
