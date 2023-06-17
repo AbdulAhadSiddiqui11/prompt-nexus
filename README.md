@@ -22,46 +22,66 @@
 
 <br />
 <h4 align="center"> <em><strong>Prompt Nexus </strong> is an open-source app powered by React, Next.js 13, and MongoDB for discovering, creating, and sharing unique creative prompts.</em></h4>
- <br /> 
-#### Features:
-* <b>Modern & Responsive Design</b> : Seed comes with beautiful modern design with fully responsive layout which results in an amazing UX
+<br /> 
 
-* <b>Dynamic Routing</b> : Seed will create dynamic routes to new blogs or categories you add from your CMS
-* <b>Static Site Generation</b> : All blog posts will be static in nature, meaning they don't require client side async API calls or server side processing to render, these pages are cached and served blazing fast directly from a CDN. One more benefit to static pages is, they are SEO friendly. 
-* <b>Incremental Static Site Regeneration</b> : Seed will revalidate the static pages on each request and update the content as needed. This will make sure users are always seeing latest content while enjoying super fast page loads
-* <b>Client Side Data Fetching</b> : Components like "Related posts" on the side-bar will fetch data in real time to promote specific posts. This way most of the page still remain static 
-* <b>Unlimited Authors, Posts and Categories</b> : There is no limit the number of authors, post or categories you want to publish onto Seed
-* <b>Comments Moderation</b> : All readers can submit comments, but they will only be published for public view after your approval
-* <b>Google Analytics</b> : Monitor site activity with Google Analytics
+### Features:
+* <b>Adaptive & Responsive Layout</b> : Crafted with an elegant design approach, Prompt Nexus delivers fully responsive pages ensuring an exceptional UX.
+
+* <b>Integrated Google Authentication</b> : Seamlessly connect using Google Authentication, ensuring a simple, secure, and smooth user experience.
+
+* <b>Real-time Google Analytics</b> : Track and assess user activity using Google Analytics, helping you make data-driven decisions.
+
+* <b>Dynamic Prompt Creation & Sharing</b> : You can create and share prompts for powerful language models like OpenAI's GPT-3.5, GPT-4, and more, expanding the possibilities for communication and interaction.
+
+* <b>Flexible Tagging, Editing, and Deletion</b> : Take complete control of your prompts with our robust features that allow you to tag, edit or delete them as per your requirement.
+
+* <b>Engage with Community Contributions</b> : Explore a world of prompts from other users, fostering a rich, engaging, and collaborative user environment.
+
+* <b>Advanced Search Capability</b> : Find exactly what you're looking for with the advanced search feature. You can search prompts, users, and tags effortlessly and efficiently.
+
+* <b>Personalized Profile Pages</b> : View all your prompts in one place with personalized profile pages. You can also explore prompts from specific users, making navigation simple and convenient.
 
 ## Tech. stack
 ### Front-end stack
+* [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 * [Next.js](https://nextjs.org/)
 * [React.js](https://reactjs.org/)
-* [Typescript](https://www.typescriptlang.org/)
-* [GraphQL](https://graphql.org/)
 * [Tailwind CSS](https://tailwindcss.com/)
-* [Sass](https://sass-lang.com/documentation/)
 
 ### Back-end stack
-* [Next.js](https://nextjs.org/) : API endpoints, Static Site Generation (SSG), Incremental Static Site Regeneration (ISR), & Client-Side Data Fetching
-* [HyGraph](https://hygraph.com/docs) : Datastore / Headless CMS
+* [Next.js](https://nextjs.org/) : API endpoints & Client-Side Data Fetching
+* [MongoDB](https://www.mongodb.com/docs/) : Database
+* [NextAuth.js](https://next-auth.js.org/) : Google Authentication
 
 
 ## Installing locally
 
-### Setting up HyGraph CMS
-* Create a <i>Graph CMS project</i> with schema provided.
-* Check out [HyGraph documentation](https://hygraph.com/docs) for a step by step guide
-* Once you have your HyGraph CMS ready, fill in your env. varilables and proceed with the next steps
-* You can use [Strapi](https://docs.strapi.io/developer-docs/latest/getting-started/introduction.html) or any other CMS in place of HyGraph and host it yourself
+### Setting up MongoDB
+* Create a <i>MongoDB Atlas</i> account.
+* Check out [MongoDB](https://www.mongodb.com/docs/) for a step by step guide
+* Once you have your MongoDB ready, fill in your env. varilables and proceed with the next steps
+
+### Obtaining Google OAuth 2.0 client credentials for NextAuth
+* Create a new project on [Google API Console](https://console.developers.google.com/) to get OAuth 2.0 client credentials
+* Following the detailed instructions [here](https://developers.google.com/identity/protocols/oauth2) to get the crendentials
 
 ### Setting up dev. environment variables
-* Create a new file ```.env.development``` under ```./``` and fill the following three variables
+* Create a new file ```.env``` under ```./``` and fill the following six variables
 ```sh
-NEXT_PUBLIC_GRAPHCSM_ENDPOINT = < YOUR CMS ENDPOINT >
+GOOGLE_CLIENT_ID = < YOUR GOOGLE CLIENT ID >
 
-NEXT_PUBLIC_GRAPHCSM_TOKEN = < YOUR CMS AUTH. TOKEN >
+GOOGLE_CLIENT_SECRET = < YOUR GOOGLE CLIENT SECRET >
+
+MONGODB_URI = < MONGODB URL >
+
+NEXTAUTH_URL = http://localhost:3000
+
+NEXTAUTH_URL_INTERNAL = http://localhost:3000
+
+NEXTAUTH_SECRET = < "A random string is used to hash tokens, sign/encrypt cookies and generate cryptographic keys. 
+                      You can quickly create a good value on the command line via this openssl command." >
+
+$ openssl rand -base64 32
 
 NEXT_PUBLIC_GA_MEASUREMENT_ID = < YOUR GOOGLE ANALYTICS MEASUREMENT ID >
 ```
@@ -92,9 +112,20 @@ pnpm dev
 ### Environment variables
 * Update the evniornment variables on your hosting platform before building
 ```sh
-NEXT_PUBLIC_GRAPHCSM_ENDPOINT = < YOUR CMS ENDPOINT >
+GOOGLE_CLIENT_ID = < YOUR GOOGLE CLIENT ID >
 
-NEXT_PUBLIC_GRAPHCSM_TOKEN = < YOUR CMS AUTH. TOKEN >
+GOOGLE_CLIENT_SECRET = < YOUR GOOGLE CLIENT SECRET >
+
+MONGODB_URI = < MONGODB URL >
+
+NEXTAUTH_URL = < HOSTED URL >
+
+NEXTAUTH_URL_INTERNAL = < HOSTED URL >
+
+NEXTAUTH_SECRET = < "A random string is used to hash tokens, sign/encrypt cookies and generate cryptographic keys. 
+                      You can quickly create a good value on the command line via this openssl command." >
+
+$ openssl rand -base64 32
 
 NEXT_PUBLIC_GA_MEASUREMENT_ID = < YOUR GOOGLE ANALYTICS MEASUREMENT ID >
 ```
@@ -126,7 +157,7 @@ pnpm install
 
 ## 🤝 Contributing
 
-Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/AbdulAhadSiddiqui11/seed/issues). 
+Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/AbdulAhadSiddiqui11/prompt-nexus/issues). 
 
 ## Show your support
 
