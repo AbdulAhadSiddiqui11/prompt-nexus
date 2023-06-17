@@ -83,7 +83,7 @@ NEXTAUTH_SECRET = < "A random string is used to hash tokens, sign/encrypt cookie
 
 $ openssl rand -base64 32
 
-NEXT_PUBLIC_GA_MEASUREMENT_ID = < YOUR GOOGLE ANALYTICS MEASUREMENT ID >
+GA_TRACKING_ID = < YOUR GOOGLE ANALYTICS MEASUREMENT ID >
 ```
 
 ### Installing dependencies
@@ -127,7 +127,7 @@ NEXTAUTH_SECRET = < "A random string is used to hash tokens, sign/encrypt cookie
 
 $ openssl rand -base64 32
 
-NEXT_PUBLIC_GA_MEASUREMENT_ID = < YOUR GOOGLE ANALYTICS MEASUREMENT ID >
+GA_TRACKING_ID = < YOUR GOOGLE ANALYTICS MEASUREMENT ID >
 ```
 
 ### Build command

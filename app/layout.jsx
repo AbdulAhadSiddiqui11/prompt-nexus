@@ -2,6 +2,7 @@ import '@styles/globals.css';
 
 import Nav from '@components/Nav';
 import Provider from '@components/Provider';
+import GoogleAnalytics from '@components/GoogleAnalytics';
 
 export const metadata = {
   title: 'Prompt Nexus - where inspiration meets AI.',
@@ -12,6 +13,7 @@ export const metadata = {
 const RootLayout = ({children}) => {
   return (
     <html lang="en">
+      <GoogleAnalytics GA_TRACKING_ID={process.env.GA_TRACKING_ID} />
       <body>
         <Provider>
           <div className='main'>
