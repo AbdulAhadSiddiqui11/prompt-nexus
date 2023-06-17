@@ -166,4 +166,4 @@ Give a ⭐️ if this project helped you!
 ## 📝 License
 
 Copyright © 2023 [Abdul Ahad Siddiqui](https://github.com/AbdulAhadSiddiqui11).<br />
-This project is [MIT](https://github.com/AbdulAhadSiddiqui11/seed/blob/main/LICENSE) licensed.
+This project is [MIT](./LICENSE) licensed.
