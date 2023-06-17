@@ -1,34 +1,138 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1 align="center">Welcome to Seed 👋</h1>
 
-## Getting Started
+<div align="center">
 
-First, run the development server:
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![Next JS](https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white)
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Google](https://img.shields.io/badge/google-4285F4?style=for-the-badge&logo=google&logoColor=white)
+![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+</div>
+
+<h2 align="center">Prompt Nexus is deployed and live, click <a href="https://prompt.abdulahadsiddiqui.com" target="_blank" >here</a> and check it out now! </h2>
+
+<p align="center">
+  <a href="https://prompt.abdulahadsiddiqui.com" target="_blank"> 
+    <img src="./static/prompt-nexus-home.png" alt="Prompt Nexus Home">
+  </a>
+</p>
+
+<br />
+<h4 align="center"> <em><strong>Prompt Nexus </strong> is an open-source app powered by React, Next.js 13, and MongoDB for discovering, creating, and sharing unique creative prompts.</em></h4>
+ <br /> 
+#### Features:
+* <b>Modern & Responsive Design</b> : Seed comes with beautiful modern design with fully responsive layout which results in an amazing UX
+
+* <b>Dynamic Routing</b> : Seed will create dynamic routes to new blogs or categories you add from your CMS
+* <b>Static Site Generation</b> : All blog posts will be static in nature, meaning they don't require client side async API calls or server side processing to render, these pages are cached and served blazing fast directly from a CDN. One more benefit to static pages is, they are SEO friendly. 
+* <b>Incremental Static Site Regeneration</b> : Seed will revalidate the static pages on each request and update the content as needed. This will make sure users are always seeing latest content while enjoying super fast page loads
+* <b>Client Side Data Fetching</b> : Components like "Related posts" on the side-bar will fetch data in real time to promote specific posts. This way most of the page still remain static 
+* <b>Unlimited Authors, Posts and Categories</b> : There is no limit the number of authors, post or categories you want to publish onto Seed
+* <b>Comments Moderation</b> : All readers can submit comments, but they will only be published for public view after your approval
+* <b>Google Analytics</b> : Monitor site activity with Google Analytics
+
+## Tech. stack
+### Front-end stack
+* [Next.js](https://nextjs.org/)
+* [React.js](https://reactjs.org/)
+* [Typescript](https://www.typescriptlang.org/)
+* [GraphQL](https://graphql.org/)
+* [Tailwind CSS](https://tailwindcss.com/)
+* [Sass](https://sass-lang.com/documentation/)
+
+### Back-end stack
+* [Next.js](https://nextjs.org/) : API endpoints, Static Site Generation (SSG), Incremental Static Site Regeneration (ISR), & Client-Side Data Fetching
+* [HyGraph](https://hygraph.com/docs) : Datastore / Headless CMS
+
+
+## Installing locally
+
+### Setting up HyGraph CMS
+* Create a <i>Graph CMS project</i> with schema provided.
+* Check out [HyGraph documentation](https://hygraph.com/docs) for a step by step guide
+* Once you have your HyGraph CMS ready, fill in your env. varilables and proceed with the next steps
+* You can use [Strapi](https://docs.strapi.io/developer-docs/latest/getting-started/introduction.html) or any other CMS in place of HyGraph and host it yourself
+
+### Setting up dev. environment variables
+* Create a new file ```.env.development``` under ```./``` and fill the following three variables
+```sh
+NEXT_PUBLIC_GRAPHCSM_ENDPOINT = < YOUR CMS ENDPOINT >
+
+NEXT_PUBLIC_GRAPHCSM_TOKEN = < YOUR CMS AUTH. TOKEN >
+
+NEXT_PUBLIC_GA_MEASUREMENT_ID = < YOUR GOOGLE ANALYTICS MEASUREMENT ID >
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Installing dependencies
+* Use the following command in your terminal from ```./``` to install project dependencies
+```sh
+npm install
+< or >
+yarn install
+< or >
+pnpm install
+```
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### Starting the development server
+* After you have installed dependencies, use the following command in your terminal from ```./``` to start the dev. server
+```sh
+npm run dev
+< or >
+yarn dev
+< or >
+pnpm dev
+```
+* Visit ```http://localhost:3000``` to view Cacta on your local machine
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Build & Deploy
 
-## Learn More
+### Environment variables
+* Update the evniornment variables on your hosting platform before building
+```sh
+NEXT_PUBLIC_GRAPHCSM_ENDPOINT = < YOUR CMS ENDPOINT >
 
-To learn more about Next.js, take a look at the following resources:
+NEXT_PUBLIC_GRAPHCSM_TOKEN = < YOUR CMS AUTH. TOKEN >
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+NEXT_PUBLIC_GA_MEASUREMENT_ID = < YOUR GOOGLE ANALYTICS MEASUREMENT ID >
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Build command
+* Use the following commands for building and deploying
+```sh
+npm run build
+< or >
+next build
+```
 
-## Deploy on Vercel
+### Install command
+```sh
+npm install
+< or >
+yarn install
+< or >
+pnpm install
+```
+* Congratulations your Seed app is up and running!
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Author
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+👤 **Abdul Ahad Siddiqui**
+
+* Github: [@AbdulAhadSiddiqui11](https://github.com/AbdulAhadSiddiqui11)
+* LinkedIn: [@abdulahadsiddiqui11](https://linkedin.com/in/abdulahadsiddiqui11)
+
+## 🤝 Contributing
+
+Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/AbdulAhadSiddiqui11/seed/issues). 
+
+## Show your support
+
+Give a ⭐️ if this project helped you!
+
+## 📝 License
+
+Copyright © 2023 [Abdul Ahad Siddiqui](https://github.com/AbdulAhadSiddiqui11).<br />
+This project is [MIT](https://github.com/AbdulAhadSiddiqui11/seed/blob/main/LICENSE) licensed.
