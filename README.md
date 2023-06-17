@@ -66,7 +66,7 @@
 * Following the detailed instructions [here](https://developers.google.com/identity/protocols/oauth2) to get the crendentials
 
 ### Setting up dev. environment variables
-* Create a new file ```.env``` under ```./``` and fill the following six variables
+* Create a new file ```.env``` under ```./``` and fill the following seven variables
 ```sh
 GOOGLE_CLIENT_ID = < YOUR GOOGLE CLIENT ID >
 
