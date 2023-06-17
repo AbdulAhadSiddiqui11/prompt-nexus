@@ -1,4 +1,4 @@
-<h1 align="center">Welcome to Seed 👋</h1>
+<h1 align="center">Welcome to Prompt Nexus 👋</h1>
 
 <div align="center">
 
