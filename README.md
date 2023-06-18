@@ -146,7 +146,7 @@ yarn install
 < or >
 pnpm install
 ```
-* Congratulations your Seed app is up and running!
+* Congratulations your Prompt Nexus app is up and running!
 
 ## Author
 
